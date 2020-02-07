@@ -1,3 +1,6 @@
+const slugify = require("slugify");
+const thumbnails = require("./src/page-data/du-an-thumbnail");
+
 exports.createPages = async ({ actions, graphql, reporter }) => {
     const result = await graphql(`
         query {
@@ -29,4 +32,20 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
             }
         })
     });
+}
+
+exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
+    thumbnails.forEach(thumbnail => {
+        const node = {
+            src: thumbnail.src,
+            label: thumbnail.label,
+            categories: thumbnail.categories,
+            id: createNodeId(slugify(thumbnail.label)),
+            internal: {
+                type: "DesignThumbnails",
+                contentDigest: createContentDigest(thumbnail)
+            }
+        }
+        actions.createNode(node)
+    })
 }
