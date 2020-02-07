@@ -39,26 +39,24 @@ header {
   div {
     align-items: center;
     display: flex;
-    justify-content: space-between;   
-     
+    justify-content: space-between;
+
     .logo-container {
       padding: 0.5rem;
 
-      @media screen and (min-width: $width-primary-tablet + 1 ){
+      @media screen and (min-width: $width-primary-tablet + 1) {
         padding-left: 0rem;
-      }     
+      }
     }
 
     .nav-container {
       display: none;
 
-      @media screen and (min-width: $width-primary-tablet + 1 ){
+      @media screen and (min-width: $width-primary-tablet + 1) {
         display: flex;
-      }  
+      }
     }
   }
-
-  
 }
 
 .logo-type {
@@ -68,8 +66,8 @@ header {
     family: $font-bungee;
   }
 
-  @media screen and (min-width: $width-primary-tablet + 1 ) {
-      display: inline;
+  @media screen and (min-width: $width-primary-tablet + 1) {
+    display: inline;
   }
 }
 
@@ -96,13 +94,12 @@ header {
 }
 
 .hamburger-container {
-
   @media screen and (min-width: $width-primary-tablet + 1) {
     display: none !important;
   }
 
   .overlay {
-    background-color: rgba($color: #ddd, $alpha: 5.0);
+    background-color: rgba($color: #ddd, $alpha: 5);
     opacity: 50;
     position: fixed;
     top: 0;
@@ -120,6 +117,4 @@ header {
     margin-right: 1rem;
     z-index: 100;
   }
-  
-  
 }

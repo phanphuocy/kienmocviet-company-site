@@ -1,0 +1,19 @@
+.container {
+  position: relative;
+  font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir,
+    helvetica neue, helvetica, ubuntu, roboto, noto, segoe ui, arial, sans-serif;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+// Select the cards div
+.container > div {
+  position: absolute;
+  box-sizing: border-box;
+  will-change: transform, width, height, opacity;
+}
+
+.container > div > div {
+  padding: 15px;
+}

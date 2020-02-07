@@ -1,19 +1,18 @@
-import React, { useState } from "react"
-import "./Header.scss"
-
+import React, { useState } from "react";
+import "./Header.scss";
 
 // Import icons
 import { FiMenu } from "react-icons/fi";
 import { FiX } from "react-icons/fi";
 
 // Import layout
-import WidthConstraint from "../WidthConstraint/WitdhConstraint"
+import WidthConstraint from "../WidthConstraint/WitdhConstraint";
 
 // Import icon image
-import icon from "../../../../static/branding/gatsby-icon.png"
+import icon from "../../../../static/branding/gatsby-icon.png";
 
 // Import custom components
-import { Link } from "gatsby"
+import { Link } from "gatsby";
 
 // const Hamburger = () => (
 //   <div className="hamburger-container">
@@ -43,7 +42,7 @@ const NavLinkGroup = () => (
       <Link to="/ve-chung-toi">Về Chúng Tôi</Link>
     </li>
     <li>
-      <Link to="/ve-chung-toi">Du An</Link>
+      <Link to="du-an">Du An</Link>
     </li>
     <li>
       <Link to="/ve-chung-toi">Cong Trinh</Link>
@@ -55,23 +54,24 @@ const NavLinkGroup = () => (
       <Link to="/blog">Bai Viet</Link>
     </li>
   </ul>
-)
+);
 const HambugerMenu = () => {
   const [showOverlay, setShowOverlay] = useState(false);
   return (
     <div className="hamburger-container">
-      <button onClick={() =>
-        setShowOverlay(!showOverlay)}>
+      <button onClick={() => setShowOverlay(!showOverlay)}>
         {!showOverlay ? <FiMenu size={24} /> : <FiX size={24} />}
       </button>
-      {showOverlay && <div className="overlay">
-        <NavLinkGroup />
-      </div>}
-    </div >
-  )
-}
+      {showOverlay && (
+        <div className="overlay">
+          <NavLinkGroup />
+        </div>
+      )}
+    </div>
+  );
+};
 const Header = () => {
-  console.log(icon)
+  console.log(icon);
   return (
     <header>
       <div className="small-contact">
@@ -98,7 +98,7 @@ const Header = () => {
         </WidthConstraint>
       </div>
     </header>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Bungee|Gothic+A1|Vollkorn&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Bungee|Gothic+A1|Open+Sans|Vollkorn&display=swap");
 
 /*
 font-family: 'Bungee', cursive;
@@ -6,9 +6,9 @@ font-family: 'Gothic A1', sans-serif;
 font-family: 'Vollkorn', serif;
 */
 
-$font-gothic: 'Gothic A1', sans-serif;
-$font-bungee: 'Bungee', cursive;
-$font-vollkorn: 'Vollkorn', serif;
+$font-gothic: "Open Sans", sans-serif;
+$font-bungee: "Bungee", cursive;
+$font-vollkorn: "Vollkorn", serif;
 
 html,
 body {
@@ -23,12 +23,13 @@ body {
   border: 0;
 }
 
-
 ol,
 ul {
   list-style: none;
 }
 
-a, a:hover, a:active {
+a,
+a:hover,
+a:active {
   text-decoration: none;
 }
