@@ -1,0 +1,125 @@
+@import "../../../styles/constants.scss";
+@import "../../../styles/main.scss";
+
+header {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 46px;
+  width: 100%;
+}
+
+.small-contact {
+  background-color: #111111;
+  display: none;
+  width: 100%;
+
+  @media screen and (min-width: $width-primary-tablet + 1) {
+    display: block;
+  }
+
+  // select the width restraint div
+  div {
+    display: flex;
+    justify-content: flex-end;
+
+    p {
+      color: white;
+      margin: 0.1rem 0;
+    }
+  }
+}
+
+.navbar {
+  background-color: #ddd;
+  width: 100%;
+
+  // select the width restraint div
+  div {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;   
+     
+    .logo-container {
+      padding: 0.5rem;
+
+      @media screen and (min-width: $width-primary-tablet + 1 ){
+        padding-left: 0rem;
+      }     
+    }
+
+    .nav-container {
+      display: none;
+
+      @media screen and (min-width: $width-primary-tablet + 1 ){
+        display: flex;
+      }  
+    }
+  }
+
+  
+}
+
+.logo-type {
+  display: none;
+  margin-left: 0.5rem;
+  font: {
+    family: $font-bungee;
+  }
+
+  @media screen and (min-width: $width-primary-tablet + 1 ) {
+      display: inline;
+  }
+}
+
+.nav-item-group {
+  ul {
+    display: flex;
+
+    li {
+      margin-right: 0.5rem;
+    }
+  }
+}
+
+.overlay {
+  ul {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+
+    li {
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+.hamburger-container {
+
+  @media screen and (min-width: $width-primary-tablet + 1) {
+    display: none !important;
+  }
+
+  .overlay {
+    background-color: rgba($color: #ddd, $alpha: 5.0);
+    opacity: 50;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: 50;
+
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  button {
+    margin-right: 1rem;
+    z-index: 100;
+  }
+  
+  
+}

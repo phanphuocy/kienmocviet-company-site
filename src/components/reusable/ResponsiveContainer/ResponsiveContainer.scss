@@ -1,0 +1,17 @@
+@import "../../../styles/constants.scss";
+
+.responsive-container {
+    width: 100%;
+
+    @media screen  and (min-width: $width-primary-tablet + 1){
+        width: $width-primary-tablet;
+    }
+
+    @media screen  and (min-width: $width-primary-laptop + 1){
+        width: $width-primary-laptop;
+    }
+
+    @media screen  and (min-width: $width-primary-desktop + 1){
+        width: $width-primary-desktop;
+    }
+}

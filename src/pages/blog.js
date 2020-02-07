@@ -12,15 +12,12 @@ const IndexPage = () => {
   const blogs = useBlogs();
 
   return (
-    <React.Fragment>
-      <Hero />
-      < Layout >
-        <h1>This is the blog</h1>
-        {blogs.map(blog => (
-          <BlogPreviewCard key={blog.slug} post={blog} />
-        ))}
-      </Layout >
-    </React.Fragment>
+    < Layout >
+      <h1>This is the blog</h1>
+      {blogs.map(blog => (
+        <BlogPreviewCard key={blog.slug} post={blog} />
+      ))}
+    </Layout >
   )
 }
 
