@@ -1,14 +1,26 @@
 @import "../../../styles/constants.scss";
 
 .width-constraint {
-    width: 100%;
-    margin: 0 auto;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 0.5rem;
+  box-sizing: border-box;
 
-    @media screen  and (min-width: $width-primary-tablet + 1){
-        width: $width-primary-tablet;
-    }
+  @media screen and (min-width: $width-primary-tablet + 1) {
+    width: $width-primary-tablet;
+  }
 
-    @media screen  and (min-width: $width-primary-desktop + 1){
-        width: $width-primary-desktop;
-    }
+  @media screen and (min-width: $width-primary-laptop + 1) {
+    width: $width-primary-laptop;
+  }
+
+  @media screen and (min-width: $width-primary-desktop + 1) {
+    width: $width-primary-desktop;
+  }
+}
+
+.max-laptop {
+  @media screen and (min-width: $width-primary-desktop + 1) {
+    width: $width-primary-laptop;
+  }
 }

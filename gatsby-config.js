@@ -15,7 +15,7 @@ module.exports = {
       }
     },
     `gatsby-transformer-json`,
-    // Telling Gatsby to source Hero image Content
+    // Telling Gatsby to source data in general
     {
       resolve: `gatsby-source-filesystem`,
       options: {

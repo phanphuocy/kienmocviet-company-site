@@ -14,7 +14,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   if (result.errors) {
     reporter.panic("failed to create posts", result.errors);
   }
-
+  const blogs = result.allMdx.nodes;
   blogs.forEach(blog => {
     actions.createPage({
       path: `blog/${blog.frontmatter.slug}`,

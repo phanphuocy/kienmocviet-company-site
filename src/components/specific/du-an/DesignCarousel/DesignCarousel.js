@@ -1,7 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 
 import { useTransition, animated } from "react-spring";
+
+// Import hooks
+import useMediaQueries from "../../../../hooks/use-media-queries";
+import useMeasure from "../../../../hooks/use-measure";
 
 import BackgroundImage from "gatsby-background-image";
 import Img from "gatsby-image";
@@ -10,12 +14,13 @@ import "./DesignCarousel.scss";
 
 const DesignCarousel = () => {
   const data = useStaticQuery(graphql`
-    query AllThumbs {
-      allThumbnailsJson {
+    query allDesignWorks {
+      allDesignWorksJson {
         nodes {
           src {
             sharp: childImageSharp {
-              fixed(width: 300) {
+              fixed(width: 400, height: 400, jpegQuality: 100) {
+                base64
                 src
                 srcSet
                 srcSetWebp
@@ -33,8 +38,9 @@ const DesignCarousel = () => {
       }
     }
   `);
-  const images = data.allThumbnailsJson.nodes.map(each => ({
-    fluid: each.src.sharp.fixed,
+
+  const images = data.allDesignWorksJson.nodes.map(each => ({
+    fixed: each.src.sharp.fixed,
     height: each.src.sharp.fixed.height,
     categories: each.categories,
     id: each.id,
@@ -42,20 +48,18 @@ const DesignCarousel = () => {
     label: each.label
   }));
   //
-  const columns = 2;
-  const width = 766;
+  // Hook1: Tie media queries to the number of columns
+  const columns = useMediaQueries(
+    ["(min-width: 1200px)", "(min-width: 769px)", "(min-width: 320px)"],
+    [3, 2, 1],
+    1
+  );
+  // Hook2: Measure the width of the container element
+  const [bind, { width }] = useMeasure();
+
+  // Hook3: Hold items
   const [items, set] = useState(images);
 
-  //   // Hook4: shuffle data every 2 seconds
-  //   useEffect(
-  //     () =>
-  //       void setInterval(() => {
-  //         set(shuffle(items));
-  //         console.log(shuffle(items));
-  //         console.log("Shuffled");
-  //       }, 40000),
-  //     []
-  //   );
   const shuffleImages = () => {
     set(shuffle(items));
   };
@@ -76,9 +80,11 @@ const DesignCarousel = () => {
       }`
     );
     console.log(`This card x position: ${xy[0]} and y position: ${xy[1]}`);
-    console.log(`And the width is ${300} and height ${child.height}`);
+    console.log(
+      `And the width is ${width / columns} and height ${child.height}`
+    );
     console.log(`----------------`);
-    return { ...child, xy, width: 600 / columns, height: child.height };
+    return { ...child, xy, width: width / columns, height: child.height };
   });
   console.log("Grid Items:", gridItems);
   // Hook5: Turn the static grid values into animated transitions, any addition, removal or change will be animated
@@ -92,7 +98,11 @@ const DesignCarousel = () => {
   });
 
   return (
-    <div className="container" style={{ height: Math.max(...heights) }}>
+    <div
+      {...bind}
+      className="container"
+      style={{ height: Math.max(...heights) }}
+    >
       <button
         onClick={() => {
           shuffleImages();
@@ -105,7 +115,7 @@ const DesignCarousel = () => {
           <Img fluid={each.fluid} alt={each.label} />
         </div>
       ))} */}
-      {transitions.map(({ item, props: { xy, ...rest }, key }) => (
+      {transitions.map(({ item, props: { xy, height, ...rest }, key }) => (
         <animated.div
           key={key}
           style={{
@@ -113,9 +123,9 @@ const DesignCarousel = () => {
             ...rest
           }}
         >
-          <div>
+          <div className="image-frame">
             <Img
-              fixed={item.fluid}
+              fixed={item.fixed}
               alt={item.label}
               style={{
                 width: "100%"
