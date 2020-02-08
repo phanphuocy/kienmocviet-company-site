@@ -45,7 +45,7 @@ const NavLinkGroup = () => (
       <Link to="du-an">Du An</Link>
     </li>
     <li>
-      <Link to="/ve-chung-toi">Cong Trinh</Link>
+      <Link to="/cong-trinh">Cong Trinh</Link>
     </li>
     <li>
       <Link to="/ve-chung-toi">Lien He</Link>

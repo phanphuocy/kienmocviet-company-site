@@ -32,7 +32,7 @@ const DesignsPage = ({ children, data }) => (
 );
 
 export const pageQuery = graphql`
-  query MyQuery {
+  query Thumbnails {
     thumbnailsJson {
       categories
       id

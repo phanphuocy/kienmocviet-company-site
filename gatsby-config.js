@@ -6,6 +6,7 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    // Telling Gatsby to source Blogs Content
     {
       resolve: "gatsby-source-filesystem",
       options: {
@@ -14,10 +15,18 @@ module.exports = {
       }
     },
     `gatsby-transformer-json`,
+    // Telling Gatsby to source Hero image Content
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `./data/`
+      }
+    },
+    // Telling Gatsby to source each Ten Du An Content
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `./contents/ten-du-an`
       }
     },
     `gatsby-transformer-sharp`,

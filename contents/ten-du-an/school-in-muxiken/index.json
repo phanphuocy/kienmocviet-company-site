@@ -1,0 +1,119 @@
+{
+    "title": "School In Muxiken",
+    "sections": [
+        {
+            "slug": "architecture",
+            "name": "Kien Truc Tong The",
+            "imageSet": [
+                {
+                    "label": "Image 1",
+                    "source": "./01.jpg"
+                },
+                {
+                    "label": "Image 3",
+                    "source": "./03..jpg"
+                },
+                {
+                    "label": "Image 05",
+                    "source": "./05..jpg"
+                },
+                {
+                    "label": "Image 06",
+                    "source": "./06..jpg"
+                }
+            ]
+        },
+        {
+            "slug": "interior",
+            "name": "Noi That",
+            "imageSet": [
+                {
+                    "label": "Image 07",
+                    "source": "./07..jpg"
+                },
+                {
+                    "label": "Image 08",
+                    "source": "./08..jpg"
+                },
+                {
+                    "label": "Image 09",
+                    "source": "./09..jpg"
+                },
+                {
+                    "label": "Image 11",
+                    "source": "./11..jpg"
+                }
+            ]
+        },
+        {
+            "slug": "halls",
+            "name": "Dai Sanh",
+            "imageSet": [
+                {
+                    "label": "Image 13",
+                    "source": "./13..jpg"
+                },
+                {
+                    "label": "Image 14",
+                    "source": "./14..jpg"
+                },
+                {
+                    "label": "Image 15",
+                    "source": "./15..jpg"
+                },
+                {
+                    "label": "Image 16",
+                    "source": "./16..jpg"
+                },
+                {
+                    "label": "Image 17",
+                    "source": "./17..jpg"
+                }
+            ]
+        },
+        {
+            "slug": "open-space",
+            "name": "Khong Gian Mo",
+            "imageSet": [
+                {
+                    "label": "Image 18",
+                    "source": "./18..jpg"
+                },
+                {
+                    "label": "Image 19",
+                    "source": "./19..jpg"
+                },
+                {
+                    "label": "Image 20",
+                    "source": "./20..jpg"
+                },
+                {
+                    "label": "Image 21",
+                    "source": "./21..jpg"
+                },
+                {
+                    "label": "Image 22",
+                    "source": "./22..jpg"
+                }
+            ]
+        },
+        {
+            "slug": "classrooms",
+            "name": "Phong Hoc",
+            "imageSet": [
+                {
+                    "label": "Image 23",
+                    "source": "./23..jpg"
+                },
+                {
+                    "label": "Image 24",
+                    "source": "./24..jpg"
+                },
+                {
+                    "label": "Image 25",
+                    "source": "./25..jpg"
+                }
+            ]
+        }
+    ]
+}

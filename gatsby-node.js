@@ -15,12 +15,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     reporter.panic("failed to create posts", result.errors);
   }
 
-  const blogs = result.data.allMdx.nodes;
-  console.log("fetched from graphql");
-  console.log(blogs);
-
   blogs.forEach(blog => {
-    console.log(`creating page ${blog.frontmatter.title}`);
     actions.createPage({
       path: `blog/${blog.frontmatter.slug}`,
       component: require.resolve("./src/templates/blog.js"),
