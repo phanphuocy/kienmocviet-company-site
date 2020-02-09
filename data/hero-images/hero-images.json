@@ -11,6 +11,11 @@
       "src": "./changgi-airport.jpg",
       "label": "Changgi Airport",
       "slug": "changgi-airport"
+    },
+    {
+      "src": "./school-kyo-azuma.jpg",
+      "label": "School in Kyoto",
+      "slug": "school-in-kyoto"
     }
   ]
 }
