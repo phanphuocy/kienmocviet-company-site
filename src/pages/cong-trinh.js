@@ -15,7 +15,7 @@ import Header from "../components/reusable/Header/Header";
 import WidthConstraint from "../components/reusable/WidthConstraint/WitdhConstraint";
 
 const ProjectPage = ({ children, data }) => {
-  const prop = data.allSchoolInMuxikenJson.edges[0].node;
+  const prop = data.schoolInMuxikenJson;
   console.log(prop);
 
   const index = useRef(0);
@@ -82,7 +82,7 @@ const ProjectPage = ({ children, data }) => {
             -
           </button>
         </p>
-        <div className="asacontainer">
+        <div className="carousel-container">
           {springs.map(({ x, display }, i) => (
             <animated.div
               {...transform()}
@@ -123,30 +123,27 @@ const ProjectPage = ({ children, data }) => {
 
 export const pageQuery = graphql`
   query CongTrinh {
-    allSchoolInMuxikenJson {
-      edges {
-        node {
-          title
-          sections {
-            slug
-            name
-            imageSet {
-              label
-              source {
-                sharp: childImageSharp {
-                  fluid {
-                    src
-                    srcSet
-                    srcSetWebp
-                    srcWebp
-                    base64
-                  }
-                }
+    schoolInMuxikenJson {
+      sections {
+        name
+        slug
+        imageSet {
+          label
+          source {
+            sharp: childImageSharp {
+              fluid {
+                tracedSVG
+                srcWebp
+                srcSetWebp
+                srcSet
+                src
+                base64
               }
             }
           }
         }
       }
+      title
     }
   }
 `;

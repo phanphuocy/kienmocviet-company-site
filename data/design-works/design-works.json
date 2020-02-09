@@ -1,44 +1,60 @@
-[
-  {
-    "src": "./images/william-daigneault.jpg",
-    "slug": "tall-buildings",
-    "label": "Tall Buildings",
-    "categories": "architecture"
-  },
-  {
-    "src": "./images/joao-marcelo-martins.jpg",
-    "slug": "orange-artic",
-    "label": "Orange Artic",
-    "categories": "architecture"
-  },
-  {
-    "src": "./images/random-sky.jpg",
-    "slug": "random-sky",
-    "label": "Sky Scrapper",
-    "categories": "architecture"
-  },
-  {
-    "src": "./images/chapman-chow.jpg",
-    "slug": "hongkong-tower",
-    "label": "Hong Kong Tower",
-    "categories": "architecture"
-  },
-  {
-    "src": "./images/adrian-schwarz.jpg",
-    "slug": "wooden-chair",
-    "label": "Wooden Chair",
-    "categories": "interior"
-  },
-  {
-    "src": "./images/tyler-raye.jpg",
-    "slug": "greenery-pool",
-    "label": "Greenery Pool",
-    "categories": "interior"
-  },
-  {
-    "src": "./images/annie-spratt.jpg",
-    "slug": "painting-beyound-bed",
-    "label": "Painting Beyond Bed",
-    "categories": "interior"
-  }
-]
+{
+  "categories": [
+    {
+      "slug": "all",
+      "label": "All"
+    },
+    {
+      "slug": "architecture",
+      "label": "Architecture"
+    },
+    {
+      "slug": "interior",
+      "label": "Interior"
+    }
+  ],
+  "items": [
+    {
+      "src": "./images/william-daigneault.jpg",
+      "slug": "tall-buildings",
+      "label": "Tall Buildings",
+      "categories": "architecture"
+    },
+    {
+      "src": "./images/joao-marcelo-martins.jpg",
+      "slug": "orange-artic",
+      "label": "Orange Artic",
+      "categories": "architecture"
+    },
+    {
+      "src": "./images/random-sky.jpg",
+      "slug": "random-sky",
+      "label": "Sky Scrapper",
+      "categories": "architecture"
+    },
+    {
+      "src": "./images/chapman-chow.jpg",
+      "slug": "hongkong-tower",
+      "label": "Hong Kong Tower",
+      "categories": "architecture"
+    },
+    {
+      "src": "./images/adrian-schwarz.jpg",
+      "slug": "wooden-chair",
+      "label": "Wooden Chair",
+      "categories": "interior"
+    },
+    {
+      "src": "./images/tyler-raye.jpg",
+      "slug": "greenery-pool",
+      "label": "Greenery Pool",
+      "categories": "interior"
+    },
+    {
+      "src": "./images/annie-spratt.jpg",
+      "slug": "painting-beyound-bed",
+      "label": "Painting Beyond Bed",
+      "categories": "interior"
+    }
+  ]
+}

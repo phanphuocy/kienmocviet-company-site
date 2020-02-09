@@ -9,44 +9,42 @@ import useMeasure from "../../../../hooks/use-measure";
 
 import BackgroundImage from "gatsby-background-image";
 import Img from "gatsby-image";
-import shuffle from "lodash/shuffle";
 import "./DesignCarousel.scss";
 
 const DesignCarousel = () => {
   const data = useStaticQuery(graphql`
-    query allDesignWorks {
-      allDesignWorksJson {
-        nodes {
+    query {
+      designWorksJson {
+        categories {
+          slug
+          label
+        }
+        items {
+          categories
+          slug
+          label
           src {
             sharp: childImageSharp {
-              fixed(width: 400, height: 400, jpegQuality: 100) {
-                base64
-                src
-                srcSet
-                srcSetWebp
-                srcWebp
-                width
-                height
+              fluid(maxWidth: 350, maxHeight: 300) {
+                ...GatsbyImageSharpFluid
               }
             }
           }
-          categories
-          id
-          slug
-          label
         }
       }
     }
   `);
 
-  const images = data.allDesignWorksJson.nodes.map(each => ({
-    fixed: each.src.sharp.fixed,
-    height: each.src.sharp.fixed.height,
+  const images = data.designWorksJson.items.map(each => ({
+    fluid: each.src.sharp.fluid,
+    height: 400,
     categories: each.categories,
-    id: each.id,
     slug: each.slug,
+    id: each.slug,
     label: each.label
   }));
+  const categories = data.designWorksJson.categories;
+  console.log(categories);
   //
   // Hook1: Tie media queries to the number of columns
   const columns = useMediaQueries(
@@ -60,8 +58,13 @@ const DesignCarousel = () => {
   // Hook3: Hold items
   const [items, set] = useState(images);
 
-  const shuffleImages = () => {
-    set(shuffle(items));
+  const filterImages = condition => {
+    console.log(`going to compare to ${condition}`);
+    if (condition === "all") {
+      set(images);
+      return;
+    }
+    set(images.filter(image => image.categories === condition));
   };
   //
   let heights = new Array(columns).fill(0);
@@ -71,22 +74,22 @@ const DesignCarousel = () => {
       (width / columns) * columnIndex,
       (heights[columnIndex] += child.height) - child.height
     ];
-    console.log(
-      `Card ${child.label} will be placed in column number ${columnIndex + 1}`
-    );
-    console.log(
-      `The current height of column ${columnIndex + 1} is ${
-        heights[columnIndex]
-      }`
-    );
-    console.log(`This card x position: ${xy[0]} and y position: ${xy[1]}`);
-    console.log(
-      `And the width is ${width / columns} and height ${child.height}`
-    );
-    console.log(`----------------`);
+    // console.log(
+    //   `Card ${child.label} will be placed in column number ${columnIndex + 1}`
+    // );
+    // console.log(
+    //   `The current height of column ${columnIndex + 1} is ${
+    //     heights[columnIndex]
+    //   }`
+    // );
+    // console.log(`This card x position: ${xy[0]} and y position: ${xy[1]}`);
+    // console.log(
+    //   `And the width is ${width / columns} and height ${child.height}`
+    // );
+    // console.log(`----------------`);
     return { ...child, xy, width: width / columns, height: child.height };
   });
-  console.log("Grid Items:", gridItems);
+
   // Hook5: Turn the static grid values into animated transitions, any addition, removal or change will be animated
   const transitions = useTransition(gridItems, item => item.id, {
     from: ({ xy, width, height }) => ({ xy, width, height, opacity: 0 }),
@@ -103,37 +106,50 @@ const DesignCarousel = () => {
       className="container"
       style={{ height: Math.max(...heights) }}
     >
-      <button
-        onClick={() => {
-          shuffleImages();
-        }}
-      >
-        Shuffle
-      </button>
-      {/* {items.map(each => (
-        <div className="card" key={each.slug}>
-          <Img fluid={each.fluid} alt={each.label} />
-        </div>
-      ))} */}
-      {transitions.map(({ item, props: { xy, height, ...rest }, key }) => (
+      <div className="selectors">
+        {categories.map(each => (
+          <button onClick={() => filterImages(each.slug)}>{each.label}</button>
+        ))}
+      </div>
+      <div className="carousel">
+        {transitions.map(({ item, props: { xy, height, ...rest }, key }) => (
+          <animated.div
+            key={key}
+            style={{
+              height,
+              transform: xy.interpolate(
+                (x, y) => `translate3d(${x}px,${y}px,0)`
+              ),
+              ...rest
+            }}
+          >
+            <div className="card">
+              <div className="image-frame">
+                <Img fluid={item.fluid} alt={item.label} />
+              </div>
+              <h4>{item.label}</h4>
+              <p>{item.categories}</p>
+            </div>
+          </animated.div>
+        ))}
+      </div>
+      {/* {transitions.map(({ item, props: { xy, height, ...rest }, key }) => (
         <animated.div
           key={key}
           style={{
+            height,
             transform: xy.interpolate((x, y) => `translate3d(${x}px,${y}px,0)`),
             ...rest
           }}
         >
-          <div className="image-frame">
-            <Img
-              fixed={item.fixed}
-              alt={item.label}
-              style={{
-                width: "100%"
-              }}
-            />
+          <div className="card">
+            <div className="image-frame">
+              <Img fixed={item.fixed} alt={item.label} />
+            </div>
+            <h4>{item.label}</h4>
           </div>
         </animated.div>
-      ))}
+      ))} */}
     </div>
   );
 };

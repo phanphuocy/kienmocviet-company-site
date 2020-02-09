@@ -42,7 +42,7 @@ const NavLinkGroup = () => (
       <Link to="/ve-chung-toi">Về Chúng Tôi</Link>
     </li>
     <li>
-      <Link to="du-an">Du An</Link>
+      <Link to="/du-an">Du An</Link>
     </li>
     <li>
       <Link to="/cong-trinh">Cong Trinh</Link>
@@ -71,7 +71,6 @@ const HambugerMenu = () => {
   );
 };
 const Header = () => {
-  console.log(icon);
   return (
     <header>
       <div className="small-contact">
