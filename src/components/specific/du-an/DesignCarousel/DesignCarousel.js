@@ -14,7 +14,7 @@ import "./DesignCarousel.scss";
 const DesignCarousel = () => {
   const data = useStaticQuery(graphql`
     query {
-      designWorksJson {
+      jsonFile(file_name: { eq: "design-works" }) {
         categories {
           slug
           label
@@ -35,7 +35,7 @@ const DesignCarousel = () => {
     }
   `);
 
-  const images = data.designWorksJson.items.map(each => ({
+  const images = data.jsonFile.items.map(each => ({
     fluid: each.src.sharp.fluid,
     height: 400,
     categories: each.categories,
@@ -43,7 +43,7 @@ const DesignCarousel = () => {
     id: each.slug,
     label: each.label
   }));
-  const categories = data.designWorksJson.categories;
+  const categories = data.jsonFile.categories;
   console.log(categories);
   //
   // Hook1: Tie media queries to the number of columns
@@ -108,7 +108,9 @@ const DesignCarousel = () => {
     >
       <div className="selectors">
         {categories.map(each => (
-          <button onClick={() => filterImages(each.slug)}>{each.label}</button>
+          <button key={each.slug} onClick={() => filterImages(each.slug)}>
+            {each.label}
+          </button>
         ))}
       </div>
       <div className="carousel">

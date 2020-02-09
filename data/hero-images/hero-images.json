@@ -1,12 +1,16 @@
-[
-  {
-    "src": "./steel-ceiling-with-glass.jpg",
-    "label": "Steel Ceiling with Glass",
-    "slug": "steel-ceiling-with-glass"
-  },
-  {
-    "src": "./changgi-airport.jpg",
-    "label": "Changgi Airport",
-    "slug": "changgi-airport"
-  }
-]
+{
+  "file-type": "site-data",
+  "file-name": "hero-images",
+  "items": [
+    {
+      "src": "./steel-ceiling-with-glass.jpg",
+      "label": "Steel Ceiling with Glass",
+      "slug": "steel-ceiling-with-glass"
+    },
+    {
+      "src": "./changgi-airport.jpg",
+      "label": "Changgi Airport",
+      "slug": "changgi-airport"
+    }
+  ]
+}

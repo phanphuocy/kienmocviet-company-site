@@ -15,7 +15,7 @@ import Header from "../components/reusable/Header/Header";
 import WidthConstraint from "../components/reusable/WidthConstraint/WitdhConstraint";
 
 const ProjectPage = ({ children, data }) => {
-  const prop = data.schoolInMuxikenJson;
+  const prop = data.jsonFile;
   console.log(prop);
 
   const index = useRef(0);
@@ -123,7 +123,10 @@ const ProjectPage = ({ children, data }) => {
 
 export const pageQuery = graphql`
   query CongTrinh {
-    schoolInMuxikenJson {
+    jsonFile(
+      file_name: { eq: "school-in-muxiken" }
+      file_type: { eq: "ten-du-an" }
+    ) {
       sections {
         name
         slug

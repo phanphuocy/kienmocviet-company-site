@@ -14,7 +14,12 @@ module.exports = {
         path: "contents/blogs"
       }
     },
-    `gatsby-transformer-json`,
+    {
+      resolve: `gatsby-transformer-json`,
+      options: {
+        typeName: `JsonFile` // a fixed string
+      }
+    },
     // Telling Gatsby to source data in general
     {
       resolve: `gatsby-source-filesystem`,

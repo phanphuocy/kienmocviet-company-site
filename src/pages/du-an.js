@@ -11,7 +11,7 @@ import WidthConstraint from "../components/reusable/WidthConstraint/WitdhConstra
 import DesignCarousel from "../components/specific/du-an/DesignCarousel/DesignCarousel";
 
 const DesignsPage = ({ children, data }) => {
-  const heroImageFluid = data.heroImagesJson;
+  const heroImageFluid = data.jsonFile.items[0];
   return (
     <React.Fragment>
       <Header />
@@ -29,17 +29,25 @@ const DesignsPage = ({ children, data }) => {
 
 export const pageQuery = graphql`
   query queryForHeroImage {
-    heroImagesJson(slug: { eq: "steel-ceiling-with-glass" }) {
-      slug
-      label
-      src {
-        sharp: childImageSharp {
-          fluid {
-            base64
-            src
-            srcSet
-            srcSetWebp
-            srcWebp
+    jsonFile(
+      items: { elemMatch: { slug: { eq: "steel-ceiling-with-glass" } } }
+    ) {
+      file_name
+      items {
+        label
+        slug
+        src {
+          sharp: childImageSharp {
+            fluid {
+              base64
+              tracedSVG
+              srcWebp
+              srcSetWebp
+              originalImg
+              originalName
+              presentationWidth
+              presentationHeight
+            }
           }
         }
       }
