@@ -11,13 +11,11 @@ import WidthConstraint from "../components/reusable/WidthConstraint/WitdhConstra
 import DesignCarousel from "../components/specific/du-an/DesignCarousel/DesignCarousel";
 
 const ProjectPage = ({ children, data }) => {
-  const heroImageFluid = data.jsonFile.items[1];
   return (
     <React.Fragment>
       <Header />
       <PageHeroImage
-        imageFluid={heroImageFluid.src.sharp.fluid}
-        altText={heroImageFluid.label}
+        querySlug="changgi-airport"
         pageTitle="CÔNG TRÌNH"
       />
       <WidthConstraint maxWidth="laptop">
@@ -27,30 +25,5 @@ const ProjectPage = ({ children, data }) => {
   );
 };
 
-export const pageQuery = graphql`
-  query {
-    jsonFile(items: { elemMatch: { slug: { eq: "changgi-airport" } } }) {
-      file_name
-      items {
-        label
-        slug
-        src {
-          sharp: childImageSharp {
-            fluid {
-              base64
-              tracedSVG
-              srcWebp
-              srcSetWebp
-              originalImg
-              originalName
-              presentationWidth
-              presentationHeight
-            }
-          }
-        }
-      }
-    }
-  }
-`;
 
 export default ProjectPage;

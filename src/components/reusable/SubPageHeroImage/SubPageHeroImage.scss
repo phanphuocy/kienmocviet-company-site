@@ -1,0 +1,10 @@
+@import "../../../styles/constants.scss";
+@import "../../../styles/main.scss";
+
+.sub-page-hero {
+  height: 80vh;
+
+  @media screen and (min-width: $width-primary-tablet + 1) {
+    height: 400px;
+  }
+}

@@ -1,65 +1,54 @@
-import React from "react";
-import { Link } from "gatsby";
+import React, { useState } from "react";
+import "../styles/pages/blog.scss"
 
-import Layout from "../components/reusable/Layout/layout";
-
-import BlogPreviewCard from "../components/specific/blog/BlogPreviewCard/BlogPreviewCard";
-import Hero from "../components/hero";
+import Img from "gatsby-image";
 
 // Import custom components
 import Header from "../components/reusable/Header/Header";
 import WidthContraint from "../components/reusable/WidthConstraint/WitdhConstraint";
 import PageHeroImage from "../components/reusable/PageHeroImage/PageHeroImage";
+import BlogPreviewCard from "../components/specific/blog/BlogPreviewCard/BlogPreviewCard";
 
+// Import hooks
 import useBlogs from "../hooks/use-blogs";
 
 const BlogPage = ({ data }) => {
-  const heroImageFluid = data.jsonFile.items.find(
-    image => image.slug === "centric-abstract"
-  );
   const blogs = useBlogs();
+  const featurePost = blogs.slice(0, 3);
 
   return (
     <React.Fragment>
       <Header />
       <PageHeroImage
-        imageFluid={heroImageFluid.src.sharp.fluid}
-        altText={heroImageFluid.label}
+        querySlug="centric-abstract"
         pageTitle="BLOG"
       />
       <WidthContraint>
-        <h1>This is the blog</h1>
-        {blogs.map(blog => (
-          <BlogPreviewCard key={blog.slug} post={blog} />
-        ))}
+        <div className="blog-container">
+          <div className="blog-sidebar">
+
+            <div className="feature-blogs">
+              <p className="blog-heading">
+                Bai Viet Featured
+              </p>
+              {featurePost.map(blog => <div className="feature-single">
+                <Img fluid={blog.image.sharp.fluid} style={{ minHeight: "80px", minWidth: "80px" }} />
+                <p>{blog.title}</p>
+              </div>)}
+            </div>
+            <div className="blog-tag-group">
+              <p>Conafaslkfasn</p>
+            </div>
+          </div>
+          <div className="blog-wrap">
+            {blogs.map(blog => (
+              <BlogPreviewCard key={blog.slug} post={blog} />
+            ))}
+          </div>
+        </div>
       </WidthContraint>
     </React.Fragment>
   );
-};
-
-export const pageQuery = graphql`
-  query {
-    jsonFile(file_name: { eq: "hero-images" }) {
-      items {
-        label
-        slug
-        src {
-          sharp: childImageSharp {
-            fluid {
-              base64
-              tracedSVG
-              srcWebp
-              srcSetWebp
-              originalImg
-              originalName
-              presentationWidth
-              presentationHeight
-            }
-          }
-        }
-      }
-    }
-  }
-`;
+}
 
 export default BlogPage;

@@ -10,6 +10,10 @@ $font-gothic: "Be Vietnam", sans-serif;
 $font-bungee: "Bungee", cursive;
 $font-vollkorn: "Vollkorn", serif;
 
+.gatsby-image-wrapper {
+  min-height: 100% !important;
+}
+
 html,
 body {
   font-family: $font-gothic;

@@ -1,15 +1,16 @@
 import React from "react";
-import Img from "gatsby-image";
-
 import BackgroundImage from "gatsby-background-image";
 import "./PageHeroImage.scss";
 
-const PageHeroImage = ({ imageFluid, altText, pageTitle }) => {
+import useHeroImage from "../../../hooks/use-hero-image";
+
+const PageHeroImage = ({ pageTitle, querySlug }) => {
+  const data = useHeroImage(querySlug)
   return (
     <div className="page-hero">
       <BackgroundImage
-        fluid={imageFluid}
-        alt={altText}
+        fluid={data.src.sharp.fluid}
+        alt={data.label}
         style={{ minHeight: "100%" }}
       >
         {pageTitle && (

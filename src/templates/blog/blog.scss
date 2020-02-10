@@ -1,8 +1,14 @@
 @import "../../styles//main.scss";
+@import "../../styles/constants.scss";
 
 .blog-title {
   color: yellowgreen;
   text-align: center;
+  margin-top: 1rem;
+
+  @media screen and (min-width: $width-primary-tablet) {
+    margin-top: 0rem;
+  }
   margin-bottom: 1rem;
   font-family: $font-vollkorn;
 }
@@ -14,13 +20,15 @@
 }
 
 .offset {
-  position: relative;
-  top: -4rem;
   background-color: white;
   padding: 0.5rem 1rem;
-  @media screen and (min-width: 768px) {
+
+  @media screen and (min-width: $width-primary-tablet) {
+    position: relative;
+    top: -4rem;
     padding: 2rem 2rem;
   }
+
 
   h2,
   h3,
@@ -38,5 +46,18 @@
     font-family: $font-vollkorn;
     max-width: 680px;
     margin: 0 auto 1rem;
+  }
+}
+
+.gatsby-resp-image-wrapper {
+  position: absolute;
+  width: 100vw;
+  left: -1rem;  
+
+  @media screen and (min-width: $width-primary-tablet) {
+    position: relative;
+    width: 100%;
+    left: 0;
+    
   }
 }

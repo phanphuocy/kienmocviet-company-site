@@ -1,0 +1,64 @@
+@import "../../styles/constants.scss";
+
+.blog-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0.5rem;
+
+    @media screen and (min-width: $width-primary-laptop + 1) {
+        margin-top: 2rem;
+        flex-direction: row;
+    }
+
+}
+
+.blog-sidebar {
+    padding: 1rem 0;
+    
+    @media screen and (min-width: $width-primary-laptop) {
+        flex: 0 0 15rem;
+        padding-right: 1rem;
+    }
+
+    @media screen and (min-width: $width-primary-desktop) {
+        flex: 0 0 20rem;
+        padding-right: 1rem;
+    }
+
+    .blog-heading {
+        color: #ababab;
+        margin-bottom: 1rem;
+    }
+}
+
+.feature-blogs {
+    display:none;
+
+
+    @media screen and (min-width: $width-primary-tablet) {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .feature-single {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 0.5rem;
+
+        .gatsby-image-wrapper {
+            height: 80px;
+        }
+
+        p {
+            font-size: 16px;
+            margin: 0 0.5em;
+        }
+    }
+}
+
+.blog-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+   
+}

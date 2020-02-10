@@ -10,12 +10,11 @@ const useBlogs = () => {
                 author
                 slug
                 title
-                image {
+                image :feature_image {
                     sharp: childImageSharp {
                         fluid(
-                            maxWidth: 100
-                            maxHeight: 100
-                            duotone: {shadow: "#663399", highlight: "#ddbbff" }
+                            maxWidth: 400
+                            maxHeight: 300
                         ) {
                             srcSet
                             srcWebp
