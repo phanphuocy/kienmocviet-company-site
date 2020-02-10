@@ -49,7 +49,15 @@ module.exports = {
       options: {
         defaultLayouts: {
           default: require.resolve("./src/components/reusable/Layout/layout.js")
-        }
+        },
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 1200
+            }
+          }
+        ]
       }
     },
     {

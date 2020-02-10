@@ -53,6 +53,9 @@ const NavLinkGroup = () => (
     <li>
       <Link to="/blog">Bai Viet</Link>
     </li>
+    <li>
+      <Link to="/du-an/school-in-saigon">Ten Du An</Link>
+    </li>
   </ul>
 );
 const HambugerMenu = () => {

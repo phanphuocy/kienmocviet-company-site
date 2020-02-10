@@ -1,28 +1,29 @@
 .ten-du-an {
-    min-height: 100vh;
+  min-height: 100vh;
 }
 
 .background-filter {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.1);
-    z-index: -100;
-  }
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  // background-color: rgba(0, 0, 0, 0.1);
+  z-index: -50;
+}
 
-  .slide-show {
-      position: relative;
-  }
+.slide-show {
+  position: relative;
+}
 .slide {
-    position: absolute;
-    width: 100%;
+  position: absolute;
+  width: 100%;
 }
 .single-image {
-    width: 100%;
-    padding: 1rem;
-    @media screen and (min-width: 769px) {
-        width: 45%;
-    }
+  box-sizing: border-box;
+  width: 100%;
+  padding: 1rem;
+  @media screen and (min-width: 769px) {
+    width: 50%;
+  }
 }

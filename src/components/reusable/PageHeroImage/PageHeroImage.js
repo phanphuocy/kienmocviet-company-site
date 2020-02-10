@@ -12,11 +12,13 @@ const PageHeroImage = ({ imageFluid, altText, pageTitle }) => {
         alt={altText}
         style={{ minHeight: "100%" }}
       >
-        <div className="title-wrap">
-          <div className="title-frame">
-            <h1>{pageTitle}</h1>
+        {pageTitle && (
+          <div className="title-wrap">
+            <div className="title-frame">
+              <h1>{pageTitle}</h1>
+            </div>
           </div>
-        </div>
+        )}
       </BackgroundImage>
     </div>
   );

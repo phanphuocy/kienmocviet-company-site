@@ -19,6 +19,16 @@
   }
 }
 
+.max-alt-laptop {
+  @media screen and (min-width: $width-primary-laptop + 1) {
+    width: $width-alt-laptop;
+  }
+
+  @media screen and (min-width: $width-primary-desktop + 1) {
+    width: $width-alt-laptop;
+  }
+}
+
 .max-laptop {
   @media screen and (min-width: $width-primary-desktop + 1) {
     width: $width-primary-laptop;

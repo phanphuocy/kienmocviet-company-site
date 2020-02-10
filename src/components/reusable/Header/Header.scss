@@ -74,9 +74,13 @@ header {
 .nav-item-group {
   ul {
     display: flex;
+    flex-wrap: wrap;
 
     li {
-      margin-right: 0.5rem;
+      padding: 0.5rem;
+    }
+    li:hover {
+      background-color: lightsteelblue;
     }
   }
 }

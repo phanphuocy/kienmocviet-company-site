@@ -16,6 +16,16 @@
       "src": "./school-kyo-azuma.jpg",
       "label": "School in Kyoto",
       "slug": "school-in-kyoto"
+    },
+    {
+      "src": "./polygon-ceiling.jpg",
+      "label": "Polygon Ceiling",
+      "slug": "polygon-ceiling"
+    },
+    {
+      "src": "./dayne-topkin.jpg",
+      "label": "Centric Abstract",
+      "slug": "centric-abstract"
     }
   ]
 }

@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Bungee|Gothic+A1|Open+Sans|Vollkorn&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Bungee|Gothic+A1|Be+Vietnam|Vollkorn&display=swap");
 
 /*
 font-family: 'Bungee', cursive;
@@ -6,7 +6,7 @@ font-family: 'Gothic A1', sans-serif;
 font-family: 'Vollkorn', serif;
 */
 
-$font-gothic: "Open Sans", sans-serif;
+$font-gothic: "Be Vietnam", sans-serif;
 $font-bungee: "Bungee", cursive;
 $font-vollkorn: "Vollkorn", serif;
 
@@ -22,6 +22,7 @@ body {
   margin: 0;
   padding: 0;
   border: 0;
+  box-sizing: border-box;
 }
 
 ol,

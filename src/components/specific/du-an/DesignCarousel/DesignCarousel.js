@@ -25,7 +25,7 @@ const DesignCarousel = () => {
           label
           src {
             sharp: childImageSharp {
-              fluid(maxWidth: 350, maxHeight: 300) {
+              fluid(maxWidth: 400, maxHeight: 300) {
                 ...GatsbyImageSharpFluid
               }
             }
