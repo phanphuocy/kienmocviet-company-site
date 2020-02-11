@@ -26,6 +26,11 @@
       "src": "./dayne-topkin.jpg",
       "label": "Centric Abstract",
       "slug": "centric-abstract"
+    },
+    {
+      "src": "./ren-ran.jpg",
+      "label": "Curvy Gold",
+      "slug": "curvy-gold"
     }
   ]
 }

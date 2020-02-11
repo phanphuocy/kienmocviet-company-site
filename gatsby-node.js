@@ -8,7 +8,15 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           }
         }
       }
-      allJsonFile(filter: { file_type: { eq: "ten-du-an" } }) {
+      allDuAn: allJsonFile(filter: { file_type: { eq: "ten-du-an" } }) {
+        nodes {
+          file_type
+          file_name
+        }
+      }
+      allCongTrinh: allJsonFile(
+        filter: { file_type: { eq: "ten-cong-trinh" } }
+      ) {
         nodes {
           file_type
           file_name
@@ -30,7 +38,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       }
     });
   });
-  const tenDuAn = result.data.allJsonFile.nodes;
+  //
+  const tenDuAn = result.data.allDuAn.nodes;
   console.log(tenDuAn);
   tenDuAn.forEach(duAn => {
     actions.createPage({
@@ -38,6 +47,20 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       component: require.resolve("./src/templates/ten-du-an/ten-du-an.js"),
       context: {
         name: duAn.file_name
+      }
+    });
+  });
+  //
+  const tenCongTrinh = result.data.allCongTrinh.nodes;
+  console.log(tenCongTrinh);
+  tenCongTrinh.forEach(congtrinh => {
+    actions.createPage({
+      path: `cong-trinh/${congtrinh.file_name}`,
+      component: require.resolve(
+        "./src/templates/ten-cong-trinh/ten-cong-trinh.js"
+      ),
+      context: {
+        name: congtrinh.file_name
       }
     });
   });

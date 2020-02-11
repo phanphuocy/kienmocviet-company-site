@@ -1,8 +1,6 @@
 import React, { useRef } from "react";
 import { graphql } from "gatsby";
-import Layout from "../../components/reusable/Layout/layout";
 import Img from "gatsby-image";
-import BackgroundImage from "gatsby-background-image";
 import "./ten-du-an.scss";
 
 // Import spring
@@ -51,7 +49,7 @@ export const query = graphql`
   }
 `;
 
-const BlogTemplate = ({ data }) => {
+const DesignTemplate = ({ data }) => {
   const { hero, post } = data;
 
   // Hook2: Measure the width of the container element
@@ -135,7 +133,7 @@ const BlogTemplate = ({ data }) => {
                   }}
                 >
                   {post.sections[i].imageSet.map(image => (
-                    <div className="single-image">
+                    <div className="single-image" key={image.label}>
                       <Img fluid={image.source.sharp.fluid} />
                     </div>
                   ))}
@@ -164,4 +162,4 @@ const BlogTemplate = ({ data }) => {
   );
 };
 
-export default BlogTemplate;
+export default DesignTemplate;

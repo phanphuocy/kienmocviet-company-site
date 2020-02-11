@@ -1,0 +1,116 @@
+{
+  "title": "Vegan House",
+  "file-type": "ten-cong-trinh",
+  "file-name": "vegan-house",
+  "info": {
+    "investor": "Anh Hải",
+    "area": 60,
+    "scale": " Trệt + 1 Lửng + 3 Lầu + Mái BTCT"
+  },
+  "gallery": [
+    {
+      "label": "Image 1",
+      "source": "./images/1.jpg"
+    },
+    {
+      "label": "Image 2",
+      "source": "./images/4.jpg"
+    },
+    {
+      "label": "Image 5-After.jpg",
+      "source": "./images/5-After.jpg"
+    },
+    {
+      "label": "Image 6",
+      "source": "./images/6.jpg"
+    },
+    {
+      "label": "Image 7",
+      "source": "./images/7.jpg"
+    },
+    {
+      "label": "Image 8",
+      "source": "./images/8-After.jpg"
+    },
+    {
+      "label": "Image 9",
+      "source": "./images/9-After.jpg"
+    },
+    {
+      "label": "Image 10",
+      "source": "./images/10.jpg"
+    },
+    {
+      "label": "Image 11",
+      "source": "./images/11.jpg"
+    },
+    {
+      "label": "Image 12",
+      "source": "./images/12.jpg"
+    },
+    {
+      "label": "Image 13",
+      "source": "./images/13.jpg"
+    },
+    {
+      "label": "Image 14",
+      "source": "./images/14.jpg"
+    },
+    {
+      "label": "Image 15",
+      "source": "./images/15.jpg"
+    },
+    {
+      "label": "Image 16",
+      "source": "./images/16.jpg"
+    },
+    {
+      "label": "Image 17",
+      "source": "./images/17.jpg"
+    },
+    {
+      "label": "Image 18",
+      "source": "./images/18.jpg"
+    },
+    {
+      "label": "Image 19",
+      "source": "./images/19.jpg"
+    },
+    {
+      "label": "Image 20",
+      "source": "./images/20.jpg"
+    },
+    {
+      "label": "Image 21",
+      "source": "./images/21.jpg"
+    }
+  ],
+  "sections": [
+    {
+      "paragraph": "Text description provided by the architects. This house was in an old terrace next to an apartment built in 1965. The owner works in travel and tourism, he once rented the house and planned to renovate it into a cultural place. It is on this spot that people meet up, share and cook Vietnamese traditional food, especially vegan one. They may also stay in during their time in Vietnam.",
+      "imageSet": [
+        {
+          "label": "Image 1",
+          "source": "./images/21.jpg"
+        },
+        {
+          "label": "Image 2",
+          "source": "./images/11.jpg"
+        }
+      ]
+    },
+    {
+      "paragraph": "The owner had hoarded up all the abandoned old things from his friends before brought about the project. They were every kind of furniture such as table, chair, wardrobe, window and lampshade. With a tight budget, the architect wanted to exploit these old things with available ones and new ones to create a fresher place which still keeps traditional values of the former house. The old windows were used as the main material to create a distinctive appearance. These windows have been used in Vietnam for a long time because of its ventilation. They are now rearranged into a new facade with different colors and cover the old facade, wrap it up to the rooftop and create a special attraction, as well as harmonizing with the ancientness of entire area. Some open windows on the roof provide the trees beneath with space and natural light. This symbolizes growth, hopes for the future and goodness from traditional bedrock.",
+      "imageSet": [
+        {
+          "label": "Image 3",
+          "source": "./images/9-After,jpg"
+        }
+      ]
+    },
+    {
+      "paragraph": "These windows also turn up inside the house as light partitions, separate and decorate space. On the ground floor, there are long curved kitchen cupboards go through the house. The big kitchen at the front is where people cook, talk and enjoy their cooking together in a dining room behind. Garden and an old staircase to the first floor are among these spaces. On the first floor, there is a bedroom at the front and a place to relax or work. A new steel staircase was built beside the atrium to the second floor, which used to be an unused roof. A bedroom was additionally made of old available steel sheeting, which lies beneath the roof system a short distance to prevent the heat from affecting inside. From this room to the front, there is a garden for drinking tea and looking at night sky through lit in the window. Two toilets were also designed for these bedrooms. A small atrium was placed at the end for cross-room ventilation, it also provides beneath toilets with natural light. The material of walls and floors was preserved. Unrefined cement surfaces, jalousie windows and bamboo wattle on the ceiling create both a modern and ancient place and revive Vietnamese architecture in the 60's and 70's.",
+      "source": "./images/16.jpg"
+    }
+  ]
+}

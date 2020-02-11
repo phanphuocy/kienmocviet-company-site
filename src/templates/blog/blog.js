@@ -7,7 +7,7 @@ import Image from "gatsby-image";
 // Import custom components
 import Header from "../../components/reusable/Header/Header";
 import WidthConstraint from "../../components/reusable/WidthConstraint/WitdhConstraint";
-import SubPageHeroImage from "../../components/reusable/SubPageHeroImage/SubPageHeroImage";
+import HeroImage from "../../components/reusable/HeroImage/HeroImage";
 
 export const query = graphql`
   query($slug: String) {
@@ -33,7 +33,7 @@ const BlogTemplate = ({ data: { mdx: post } }) => {
   return (
     <React.Fragment>
       <Header />
-      <SubPageHeroImage
+      <HeroImage
         imageFluid={post.frontmatter.feature_image.sharp.fluid}
         altText="aa"
       />

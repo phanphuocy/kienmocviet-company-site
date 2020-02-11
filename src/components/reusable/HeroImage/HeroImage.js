@@ -1,6 +1,6 @@
 import React from "react";
 import BackgroundImage from "gatsby-background-image";
-import "./SubPageHeroImage.scss";
+import "./HeroImage.scss";
 
 const PageHeroImage = ({ imageFluid, altText }) => {
   return (
@@ -9,8 +9,7 @@ const PageHeroImage = ({ imageFluid, altText }) => {
         fluid={imageFluid}
         alt={altText}
         style={{ minHeight: "100%" }}
-      >
-      </BackgroundImage>
+      ></BackgroundImage>
     </div>
   );
 };

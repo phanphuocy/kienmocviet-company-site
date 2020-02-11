@@ -14,28 +14,6 @@ import icon from "../../../../static/branding/gatsby-icon.png";
 // Import custom components
 import { Link } from "gatsby";
 
-// const Hamburger = () => (
-//   <div className="hamburger-container">
-//     <input type="checkbox" className="toggler" />
-//     <div className="hambuger"></div>
-//     <div className="menu">
-//       <div>
-//         <div>
-//           <ul>
-//             <li>
-//               <Link to="/ve-chung-toi">Ve Chung Toi</Link>
-//             </li>
-//             <li>
-//               <Link to="/blog">Blog</Link>
-//             </li>
-//           </ul>
-//         </div>
-//       </div>
-
-//     </div>
-//   </div>
-// )
-
 const NavLinkGroup = () => (
   <ul>
     <li>
@@ -55,6 +33,9 @@ const NavLinkGroup = () => (
     </li>
     <li>
       <Link to="/du-an/school-in-saigon">Ten Du An</Link>
+    </li>
+    <li>
+      <Link to="/cong-trinh/vegan-house">Ten Cong Trinh</Link>
     </li>
   </ul>
 );

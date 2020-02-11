@@ -6,14 +6,6 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
-    // Telling Gatsby to source Blogs Content
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: "blogs",
-        path: "contents/blogs"
-      }
-    },
     {
       resolve: `gatsby-transformer-json`,
       options: {
@@ -31,7 +23,7 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `./contents/ten-du-an`
+        path: `./contents/`
       }
     },
     `gatsby-transformer-sharp`,
