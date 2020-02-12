@@ -43,13 +43,14 @@ const DesignCarousel = () => {
     id: each.slug,
     label: each.label
   }));
+
   const categories = data.jsonFile.categories;
   console.log(categories);
   //
   // Hook1: Tie media queries to the number of columns
   const columns = useMediaQueries(
     ["(min-width: 1200px)", "(min-width: 769px)", "(min-width: 320px)"],
-    [3, 2, 1],
+    [3, 2, 2],
     1
   );
   // Hook2: Measure the width of the container element
@@ -119,6 +120,7 @@ const DesignCarousel = () => {
             key={key}
             style={{
               height,
+              padding: "9px",
               transform: xy.interpolate(
                 (x, y) => `translate3d(${x}px,${y}px,0)`
               ),

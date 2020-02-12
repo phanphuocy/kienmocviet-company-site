@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import { graphql } from "gatsby";
 import Img from "gatsby-image";
 import "./ten-du-an.scss";
+import { Link } from "gatsby";
 
 // Import spring
 import { useSprings, animated } from "react-spring";
@@ -24,7 +25,7 @@ export const query = graphql`
           label
           source {
             sharp: childImageSharp {
-              fluid {
+              fluid(maxWidth: 600, maxHeight: 450) {
                 ...GatsbyImageSharpFluid
               }
             }
@@ -52,6 +53,10 @@ export const query = graphql`
 const DesignTemplate = ({ data }) => {
   const { hero, post } = data;
 
+  const selectors = post.sections.map(each => ({
+    name: each.name,
+    slug: each.slug
+  }));
   // Hook2: Measure the width of the container element
   const [bind, { width }] = useMeasure();
 
@@ -71,6 +76,13 @@ const DesignTemplate = ({ data }) => {
       return { x, display: "block" };
     });
   };
+
+  const selectHandler = slug => {
+    index.current = selectors.findIndex(each => each.slug === slug);
+    console.log("current index", index.current);
+    transform();
+  };
+
   const incrementIndex = () => {
     index.current++;
     index.current = clamp(index.current, 0, post.sections.length - 1);
@@ -86,15 +98,29 @@ const DesignTemplate = ({ data }) => {
 
   return (
     <div className="ten-du-an" {...bind}>
+      {/* <pre>{JSON.stringify(selectors, null, 2)}</pre> */}
       <Header />
       {/* <BackgroundImage
         fluid={hero.items[2].src.sharp.fluid}
         altText={hero.items[2].label}
       > */}
-      <WidthConstraint maxWidth="laptop">
-        {/* <h1>{post.file_name}</h1>
-         */}
-        <h1>{post.title}</h1>
+      <WidthConstraint>
+        <p className="title-nav">
+          <Link to="/">
+            <span>Trang Chủ/ </span>
+          </Link>{" "}
+          <Link to="/du-an/">
+            <span>Dự Án</span>
+          </Link>
+        </p>
+        <h1 className="post-title">{post.title}</h1>
+        <div className="selectors-group">
+          {selectors.map(button => (
+            <button onClick={() => selectHandler(button.slug)}>
+              {button.name}
+            </button>
+          ))}
+        </div>
         <button
           style={{ width: "30px", marginRight: "10px" }}
           onClick={() => {
@@ -111,7 +137,7 @@ const DesignTemplate = ({ data }) => {
         >
           -
         </button>
-        <div className="slide-show" style={{ height: "1200px" }}>
+        <div className="slide-show" style={{ height: "800px" }}>
           {springs.map(({ x, display }, i) => (
             <animated.div
               {...transform()}
@@ -121,20 +147,13 @@ const DesignTemplate = ({ data }) => {
                 transform: x.interpolate(x => `translate3d(${x}px,0,0)`)
               }}
             >
-              <div className="slide" style={{ border: "1px solid white" }}>
-                <h1>{post.sections[i].name}</h1>
-                <div
-                  className="image-container"
-                  key={post.sections[i].slug}
-                  style={{
-                    display: "flex",
-                    flexWrap: "wrap",
-                    justifyContent: "flex-start"
-                  }}
-                >
+              <div className="slide">
+                <div className="image-container" key={post.sections[i].slug}>
                   {post.sections[i].imageSet.map(image => (
                     <div className="single-image" key={image.label}>
-                      <Img fluid={image.source.sharp.fluid} />
+                      <div className="image-frame">
+                        <Img fluid={image.source.sharp.fluid} />
+                      </div>
                     </div>
                   ))}
                 </div>
