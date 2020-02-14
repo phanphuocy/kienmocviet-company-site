@@ -5,6 +5,7 @@ import Img from "gatsby-image";
 
 // Import custom components
 import Header from "../components/reusable/Header/Header";
+import Footer from "../components/reusable/Footer/Footer";
 import WidthContraint from "../components/reusable/WidthConstraint/WitdhConstraint";
 import PageHeroImage from "../components/reusable/PageHeroImage/PageHeroImage";
 import BlogPreviewCard from "../components/specific/blog/BlogPreviewCard/BlogPreviewCard";
@@ -47,6 +48,7 @@ const BlogPage = ({ data }) => {
           </div>
         </div>
       </WidthContraint>
+      <Footer />
     </React.Fragment>
   );
 }
