@@ -1,5 +1,5 @@
 import React from "react";
-import { graphql } from "gatsby";
+import { graphql, Link } from "gatsby";
 import "./blog.scss";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import Image from "gatsby-image";
@@ -39,6 +39,15 @@ const BlogTemplate = ({ data: { mdx: post } }) => {
       />
       <WidthConstraint maxWidth="alt-laptop">
         <div className="offset">
+
+          <p className="title-nav">
+            <Link to="/">
+              <span>Trang Chủ/ </span>
+            </Link>{" "}
+            <Link to="/blog/">
+              <span>Bài Viết</span>
+            </Link>
+          </p>
           <h1 className="blog-title">{post.frontmatter.title}</h1>
           <p className="blog-author">Post by: {post.frontmatter.author}</p>
           <MDXRenderer>{post.body}</MDXRenderer>

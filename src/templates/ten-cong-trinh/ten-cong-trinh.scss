@@ -1,0 +1,16 @@
+.section {
+    margin: 2rem 0;
+}
+
+.section::after {
+    height: 1px;
+    background-color: black;
+}
+
+.post-image {
+    margin-top: 1rem;
+}
+
+.title-nav {
+    text-align: center;
+  }

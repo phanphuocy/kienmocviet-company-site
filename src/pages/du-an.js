@@ -16,7 +16,7 @@ const DesignsPage = ({ children, data }) => {
       <Header />
       <PageHeroImage
         querySlug="steel-ceiling-with-glass"
-        pageTitle="DỰ ÁN"
+        pageTitle="DESIGN"
       />
       <WidthConstraint maxWidth="laptop">
         <DesignCarousel />

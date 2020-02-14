@@ -1,6 +1,10 @@
 @import "../../styles//main.scss";
 @import "../../styles/constants.scss";
 
+.title-nav {
+  text-align: center;
+}
+
 .blog-title {
   color: yellowgreen;
   text-align: center;
@@ -15,13 +19,14 @@
 
 .blog-author {
   margin-bottom: 1rem;
-  text-align: center;
   color: gray;
 }
 
 .offset {
   background-color: white;
   padding: 0.5rem 1rem;
+
+
 
   @media screen and (min-width: $width-primary-tablet) {
     position: relative;

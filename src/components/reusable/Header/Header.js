@@ -20,16 +20,16 @@ const NavLinkGroup = () => (
       <Link to="/ve-chung-toi">Về Chúng Tôi</Link>
     </li>
     <li>
-      <Link to="/du-an">Du An</Link>
+      <Link to="/du-an/">Du An</Link>
     </li>
     <li>
-      <Link to="/cong-trinh">Cong Trinh</Link>
+      <Link to="/cong-trinh/">Cong Trinh</Link>
     </li>
     <li>
-      <Link to="/ve-chung-toi">Lien He</Link>
+      <Link to="/lien-he">Lien He</Link>
     </li>
     <li>
-      <Link to="/blog">Bai Viet</Link>
+      <Link to="/blog/">Bai Viet</Link>
     </li>
     <li>
       <Link to="/du-an/school-in-saigon">Ten Du An</Link>

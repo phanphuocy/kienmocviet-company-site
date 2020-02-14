@@ -24,7 +24,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       }
     }
   `);
-  console.log(result.data.allMdx.nodes);
+  console.log("TEN BLOG:", result.data.allMdx.nodes);
   if (result.errors) {
     reporter.panic("failed to create posts", result.errors);
   }
@@ -40,7 +40,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   });
   //
   const tenDuAn = result.data.allDuAn.nodes;
-  console.log(tenDuAn);
+  console.log("TEN DU AN", tenDuAn);
   tenDuAn.forEach(duAn => {
     actions.createPage({
       path: `du-an/${duAn.file_name}`,
@@ -52,7 +52,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   });
   //
   const tenCongTrinh = result.data.allCongTrinh.nodes;
-  console.log(tenCongTrinh);
+  console.log("TEN CONG TRINH:", tenCongTrinh);
   tenCongTrinh.forEach(congtrinh => {
     actions.createPage({
       path: `cong-trinh/${congtrinh.file_name}`,

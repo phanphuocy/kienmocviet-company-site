@@ -6,6 +6,7 @@
   padding: 1rem 0;
   display: flex;
   flex-direction: column;
+  background-color: #eee;
 }
 .selectors {
   display: flex;
@@ -16,8 +17,6 @@
   margin-right: 0.2rem;
   padding: 0.5rem;
 }
-.carousel {
-}
 
 // Select the cards div
 .carousel > div {
@@ -27,6 +26,7 @@
 }
 .card {
   box-sizing: border-box;
+  background-color: white;
   width: 100%;
   height: 100%;
   display: flex;
@@ -46,10 +46,13 @@
     z-index: 20;
   }
 }
-.image-frame {
+.image-frame-flex {
   box-sizing: border-box;
+  flex-basis: 75%;
+  overflow-y: hidden;
+}
 
-  .gatsby-image-wrapper {
-    min-height: 300px;
-  }
+.text-frame {
+  flex-basis: 25%;
+  flex-shrink: 1;
 }

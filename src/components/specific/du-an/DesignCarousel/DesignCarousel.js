@@ -9,7 +9,7 @@ import useMeasure from "../../../../hooks/use-measure";
 
 import BackgroundImage from "gatsby-background-image";
 import Img from "gatsby-image";
-import "./DesignCarousel.scss";
+import styles from "./DesignCarousel.scss";
 
 const DesignCarousel = () => {
   const data = useStaticQuery(graphql`
@@ -25,7 +25,7 @@ const DesignCarousel = () => {
           label
           src {
             sharp: childImageSharp {
-              fluid(maxWidth: 400, maxHeight: 300) {
+              fluid(maxWidth: 533, maxHeight: 355) {
                 ...GatsbyImageSharpFluid
               }
             }
@@ -49,8 +49,8 @@ const DesignCarousel = () => {
   //
   // Hook1: Tie media queries to the number of columns
   const columns = useMediaQueries(
-    ["(min-width: 1200px)", "(min-width: 769px)", "(min-width: 320px)"],
-    [3, 2, 2],
+    ["(min-width: 1200px)", "(min-width: 576px)", "(min-width: 320px)"],
+    [3, 2, 1],
     1
   );
   // Hook2: Measure the width of the container element
@@ -69,25 +69,13 @@ const DesignCarousel = () => {
   };
   //
   let heights = new Array(columns).fill(0);
+
   let gridItems = items.map((child, i) => {
     const columnIndex = heights.indexOf(Math.min(...heights));
     const xy = [
       (width / columns) * columnIndex,
       (heights[columnIndex] += child.height) - child.height
     ];
-    // console.log(
-    //   `Card ${child.label} will be placed in column number ${columnIndex + 1}`
-    // );
-    // console.log(
-    //   `The current height of column ${columnIndex + 1} is ${
-    //     heights[columnIndex]
-    //   }`
-    // );
-    // console.log(`This card x position: ${xy[0]} and y position: ${xy[1]}`);
-    // console.log(
-    //   `And the width is ${width / columns} and height ${child.height}`
-    // );
-    // console.log(`----------------`);
     return { ...child, xy, width: width / columns, height: child.height };
   });
 
@@ -96,7 +84,7 @@ const DesignCarousel = () => {
     from: ({ xy, width, height }) => ({ xy, width, height, opacity: 0 }),
     enter: ({ xy, width, height }) => ({ xy, width, height, opacity: 1 }),
     update: ({ xy, width, height }) => ({ xy, width, height }),
-    leave: { height: 0, opacity: 0 },
+    leave: { opacity: 0 },
     config: { mass: 5, tension: 500, friction: 100 },
     trail: 25
   });
@@ -128,11 +116,13 @@ const DesignCarousel = () => {
             }}
           >
             <div className="card">
-              <div className="image-frame">
+              <div className="image-frame-flex">
                 <Img fluid={item.fluid} alt={item.label} />
               </div>
-              <h4>{item.label}</h4>
-              <p>{item.categories}</p>
+              <div className="text-frame">
+                <h4>{item.label}</h4>
+                <p>{item.categories}</p>
+              </div>
             </div>
           </animated.div>
         ))}

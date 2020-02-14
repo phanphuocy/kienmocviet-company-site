@@ -13,6 +13,7 @@ export default function useMedia(queries, values, defaultValue) {
       window.addEventListener("resize", handler);
       return () => window.removeEventListener("resize", handler);
     }
+    /*eslint-disable */
   }, []);
   return value;
 }

@@ -4,7 +4,7 @@
 .page-hero {
   height: 80vh;
 
-  @media screen and (min-width: $width-primary-tablet + 1) {
+  @media screen and (min-width: $width-primary-tablet) {
     height: 400px;
   }
 }

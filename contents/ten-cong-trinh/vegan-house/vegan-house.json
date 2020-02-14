@@ -104,13 +104,18 @@
       "imageSet": [
         {
           "label": "Image 3",
-          "source": "./images/9-After,jpg"
+          "source": "./images/9-After.jpg"
         }
       ]
     },
     {
       "paragraph": "These windows also turn up inside the house as light partitions, separate and decorate space. On the ground floor, there are long curved kitchen cupboards go through the house. The big kitchen at the front is where people cook, talk and enjoy their cooking together in a dining room behind. Garden and an old staircase to the first floor are among these spaces. On the first floor, there is a bedroom at the front and a place to relax or work. A new steel staircase was built beside the atrium to the second floor, which used to be an unused roof. A bedroom was additionally made of old available steel sheeting, which lies beneath the roof system a short distance to prevent the heat from affecting inside. From this room to the front, there is a garden for drinking tea and looking at night sky through lit in the window. Two toilets were also designed for these bedrooms. A small atrium was placed at the end for cross-room ventilation, it also provides beneath toilets with natural light. The material of walls and floors was preserved. Unrefined cement surfaces, jalousie windows and bamboo wattle on the ceiling create both a modern and ancient place and revive Vietnamese architecture in the 60's and 70's.",
-      "source": "./images/16.jpg"
+      "imageSet": [
+        {
+          "label": "Image 4",
+          "source": "./images/16.jpg"
+        }
+      ]
     }
   ]
 }
