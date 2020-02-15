@@ -9,15 +9,19 @@ const BlogPreviewCard = ({ post }) => {
     <div className={`${styles.card}`}>
       <div className={`${styles.thumbnail}`}>
         <Link to={`/blog/${post.slug}`}>
-          <Image alt={post.title} fluid={post.image.sharp.fluid} style={{ height: "100%" }} />
+          <Image
+            alt={post.title}
+            fluid={post.image.sharp.fluid}
+            style={{ height: "100%" }}
+          />
         </Link>
       </div>
       <div>
         <h3>{post.title}</h3>
         <p>{post.excerpt}</p>
-        <Link to={`blog/${post.slug}`}>Read this post</Link>
+        <Link to={`/blog/${post.slug}`}>Read this post</Link>
       </div>
-    </div >
+    </div>
   );
 };
 

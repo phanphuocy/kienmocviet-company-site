@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import "../styles/pages/blog.scss"
+import React from "react";
+import "../styles/pages/blog.scss";
 
 import Img from "gatsby-image";
 
@@ -20,22 +20,21 @@ const BlogPage = ({ data }) => {
   return (
     <React.Fragment>
       <Header />
-      <PageHeroImage
-        querySlug="centric-abstract"
-        pageTitle="BLOG"
-      />
+      <PageHeroImage querySlug="centric-abstract" pageTitle="BLOG" />
       <WidthContraint>
         <div className="blog-container">
           <div className="blog-sidebar">
-
             <div className="feature-blogs">
-              <p className="blog-heading">
-                Bai Viet Featured
-              </p>
-              {featurePost.map(blog => <div className="feature-single">
-                <Img fluid={blog.image.sharp.fluid} style={{ minHeight: "80px", minWidth: "80px" }} />
-                <p>{blog.title}</p>
-              </div>)}
+              <p className="blog-heading">Bai Viet Featured</p>
+              {featurePost.map(blog => (
+                <div className="feature-single" key={blog.slug}>
+                  <Img
+                    fluid={blog.image.sharp.fluid}
+                    style={{ minHeight: "80px", minWidth: "80px" }}
+                  />
+                  <p>{blog.title}</p>
+                </div>
+              ))}
             </div>
             <div className="blog-tag-group">
               <p>Conafaslkfasn</p>
@@ -51,6 +50,6 @@ const BlogPage = ({ data }) => {
       <Footer />
     </React.Fragment>
   );
-}
+};
 
 export default BlogPage;

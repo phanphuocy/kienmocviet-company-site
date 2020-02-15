@@ -66,13 +66,11 @@
 }
 
 .horizontal-scroll-wrapper > div > div {
-
   transform: rotate(90deg) translateY(-200px);
   transform-origin: left top;
   width: 300px;
   height: 200px;
 }
-
 
 .slide {
   width: 100%;
@@ -98,4 +96,11 @@
   border-radius: 0.2rem;
   background-color: white;
   padding: 0.5rem;
+}
+
+.info {
+  background-color: #212b23;
+  color: lightgray;
+  margin: 2rem 0;
+  padding: 2rem 1rem;
 }

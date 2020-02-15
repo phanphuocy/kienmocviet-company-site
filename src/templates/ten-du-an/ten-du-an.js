@@ -1,19 +1,13 @@
-import React, { useRef, useState } from "react";
-import { graphql } from "gatsby";
-import Img from "gatsby-image";
+import React from "react";
+import { graphql, Link } from "gatsby";
 import "./ten-du-an.scss";
-import { Link } from "gatsby";
-
-// Import spring
-import { useSprings, animated } from "react-spring";
-import clamp from "lodash/clamp";
-import useMeasure from "../../hooks/use-measure";
-import useMedia from "../../hooks/use-media-queries"
 
 // Import custom components
 import Header from "../../components/reusable/Header/Header";
+import Footer from "../../components/reusable/Footer/Footer";
 import WidthConstraint from "../../components/reusable/WidthConstraint/WitdhConstraint";
 import CarouselWithPreview from "../../components/specific/ten-du-an/Carousel/Carousel";
+
 export const query = graphql`
   query($name: String) {
     post: jsonFile(file_type: { eq: "ten-du-an" }, file_name: { eq: $name }) {
@@ -45,25 +39,11 @@ export const query = graphql`
         }
       }
     }
-    hero: jsonFile(items: { elemMatch: { slug: { eq: "school-in-kyoto" } } }) {
-      file_name
-      file_type
-      items {
-        label
-        src {
-          sharp: childImageSharp {
-            fluid(maxWidth: 1600) {
-              ...GatsbyImageSharpFluid_withWebp_tracedSVG
-            }
-          }
-        }
-      }
-    }
   }
 `;
 
 const DesignTemplate = ({ data }) => {
-  const { hero, post } = data;
+  const { post } = data;
   const images = [];
   post.sections.forEach(section =>
     section.images.forEach(set =>
@@ -72,7 +52,7 @@ const DesignTemplate = ({ data }) => {
         source: set.source
       })
     )
-  )
+  );
   const thumbnails = [];
   post.sections.forEach(section =>
     section.thumbnails.forEach(set =>
@@ -82,10 +62,10 @@ const DesignTemplate = ({ data }) => {
         tag: section.slug
       })
     )
-  )
+  );
 
   return (
-    <div className="ten-du-an" >
+    <div className="ten-du-an">
       <Header />
       <WidthConstraint maxWidth="laptop">
         <p className="title-nav">
@@ -98,12 +78,14 @@ const DesignTemplate = ({ data }) => {
         </p>
         <h1 className="post-title">{post.title}</h1>
         <CarouselWithPreview thumbnails={thumbnails} images={images} />
-
-        <h1>More Infomation</h1>
-        <p>{post.subtitle}</p>
+        <div className="info">
+          <h2>More Infomation</h2>
+          <p>{post.subtitle}</p>
+        </div>
       </WidthConstraint>
       <div className="background-filter"></div>
-      {/* </BackgroundImage> */}
+
+      <Footer />
     </div>
   );
 };

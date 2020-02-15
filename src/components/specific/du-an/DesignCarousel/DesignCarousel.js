@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 
 import { useTransition, animated } from "react-spring";
@@ -7,9 +7,8 @@ import { useTransition, animated } from "react-spring";
 import useMediaQueries from "../../../../hooks/use-media-queries";
 import useMeasure from "../../../../hooks/use-measure";
 
-import BackgroundImage from "gatsby-background-image";
 import Img from "gatsby-image";
-import styles from "./DesignCarousel.scss";
+import "./DesignCarousel.scss";
 
 const DesignCarousel = () => {
   const data = useStaticQuery(graphql`
@@ -90,11 +89,7 @@ const DesignCarousel = () => {
   });
 
   return (
-    <div
-      {...bind}
-      className="container"
-      style={{ height: Math.max(...heights) }}
-    >
+    <div {...bind} className="container">
       <div className="selectors">
         {categories.map(each => (
           <button key={each.slug} onClick={() => filterImages(each.slug)}>
@@ -102,7 +97,10 @@ const DesignCarousel = () => {
           </button>
         ))}
       </div>
-      <div className="carousel">
+      <div
+        className="carousel"
+        style={{ minHeight: "75vh", height: Math.max(...heights) }}
+      >
         {transitions.map(({ item, props: { xy, height, ...rest }, key }) => (
           <animated.div
             key={key}
@@ -127,23 +125,6 @@ const DesignCarousel = () => {
           </animated.div>
         ))}
       </div>
-      {/* {transitions.map(({ item, props: { xy, height, ...rest }, key }) => (
-        <animated.div
-          key={key}
-          style={{
-            height,
-            transform: xy.interpolate((x, y) => `translate3d(${x}px,${y}px,0)`),
-            ...rest
-          }}
-        >
-          <div className="card">
-            <div className="image-frame">
-              <Img fixed={item.fixed} alt={item.label} />
-            </div>
-            <h4>{item.label}</h4>
-          </div>
-        </animated.div>
-      ))} */}
     </div>
   );
 };

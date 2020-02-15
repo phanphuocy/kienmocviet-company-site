@@ -66,7 +66,7 @@ const Header = () => {
         <WidthConstraint>
           <div className="logo-container">
             <Link to="/">
-              <img src={icon} width="36" />
+              <img src={icon} alt="logo type" width="36" />
             </Link>
             <Link to="/">
               <p className="logo-type">IAI Corporation</p>

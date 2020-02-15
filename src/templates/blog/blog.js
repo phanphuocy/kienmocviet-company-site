@@ -2,7 +2,6 @@ import React from "react";
 import { graphql, Link } from "gatsby";
 import "./blog.scss";
 import { MDXRenderer } from "gatsby-plugin-mdx";
-import Image from "gatsby-image";
 
 // Import custom components
 import Header from "../../components/reusable/Header/Header";
@@ -39,7 +38,6 @@ const BlogTemplate = ({ data: { mdx: post } }) => {
       />
       <WidthConstraint maxWidth="alt-laptop">
         <div className="offset">
-
           <p className="title-nav">
             <Link to="/">
               <span>Trang Chủ/ </span>
