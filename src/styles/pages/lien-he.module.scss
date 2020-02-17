@@ -1,0 +1,30 @@
+@import "../constants.scss";
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 10rem;
+  margin: 1rem 0;
+  padding: 0 1rem;
+
+  @media screen and (min-width: $width-primary-laptop) {
+    flex-direction: row;
+  }
+}
+
+.contacts,
+.employ {
+  @media screen and (min-width: $width-primary-laptop) {
+    flex: 1 0 50%;
+  }
+}
+
+.addressLine {
+  display: flex;
+  justify-items: flex-start;
+  margin-bottom: 0.5rem;
+
+  div {
+    margin-right: 0.5rem;
+  }
+}
