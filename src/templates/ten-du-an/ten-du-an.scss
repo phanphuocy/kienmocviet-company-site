@@ -4,8 +4,13 @@
   min-height: 100vh;
   background-color: #eee;
 }
+
+.heading {
+  background-color: lightgrey;
+  padding: 4rem 0 2rem;
+}
+
 .title-nav {
-  margin-top: 1rem;
   text-align: center;
 }
 .post-title {
@@ -103,4 +108,32 @@
   color: lightgray;
   margin: 2rem 0;
   padding: 2rem 1rem;
+}
+
+.previous {
+  grid-area: previous;
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+}
+
+.next {
+  grid-area: next;
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+}
+
+.link-all {
+  grid-area: all;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.sibling-nav {
+  display: grid;
+  margin-bottom: 2rem;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: "previous all next";
 }
